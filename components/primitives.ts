@@ -12,6 +12,12 @@ export const title = tv({
       pink: "from-[#FF72E1] to-[#F54C7A]",
       foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
     },
+    animation: {
+      fade: "animate-fade",
+      bounce: "animate-bounce",
+      spin: "animate-spin",
+      pulse: "animate-pulse",
+    },
     size: {
       sm: "text-3xl lg:text-4xl",
       md: "text-[2.3rem] lg:text-5xl leading-9",
