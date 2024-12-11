@@ -35,7 +35,7 @@ export default function IndexPage() {
 
   return (
     <DefaultLayout>
-      <section className="flex flex-col items-center justify-center gap-4 h-full relative">
+      <section className="flex flex-col items-center justify-center gap-4 h-full relative pb-3">
         <div className="text-center justify-center w-full gap-4 flex flex-col">
           <h1 className={title({ fullWidth: true, animation: "fade" })}>
             ¡Bienvenidos a NexosoftDev!
@@ -62,10 +62,6 @@ export default function IndexPage() {
             <FaAngleDown />
           </Button>
         </div>
-      </section>
-
-      <section className="py-24" id="proyectos">
-        <ComponenteProyectos />
       </section>
     </DefaultLayout>
   );
