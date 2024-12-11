@@ -51,6 +51,12 @@ export const subtitle = tv({
     fullWidth: {
       true: "!w-full",
     },
+    animation: {
+      fade: "animate-fade",
+      bounce: "animate-bounce",
+      spin: "animate-spin",
+      pulse: "animate-pulse",
+    },
   },
   defaultVariants: {
     size: "md",

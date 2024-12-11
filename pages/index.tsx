@@ -1,5 +1,3 @@
-import { FaBeer } from "react-icons/fa";
-
 import DefaultLayout from "@/layouts/default";
 import { title, subtitle } from "@/components/primitives";
 
@@ -12,12 +10,11 @@ export default function IndexPage() {
             Bienvenidos a NexosoftDev
           </h1>
           <div className='flex w-full flex-row'>
-            <h3 className={subtitle({})}>
+            <h3 className={subtitle({ animation: "bounce" })}>
               En NexosoftDev, creemos en el poder de la creatividad, la innovación y el trabajo en equipo. Nos
               especializamos en crear soluciones web personalizadas que se adaptan a tus necesidades y aportan valor a
-              tus proyectos.
+              tus proyectos. 🚀✨
             </h3>
-            <FaBeer />
           </div>
         </div>
       </section>
