@@ -1,6 +1,7 @@
+import { FaBeer } from "react-icons/fa";
+
 import DefaultLayout from "@/layouts/default";
 import { title, subtitle } from "@/components/primitives";
-import {ComputerIcon} from "@/components/icons";
 
 export default function IndexPage() {
   return (
@@ -10,10 +11,14 @@ export default function IndexPage() {
           <h1 className={title({ fullWidth: true })}>
             Bienvenidos a NexosoftDev
           </h1>
-          <h3 className={subtitle({})}>
-            En NexosoftDev, creemos en el poder de la creatividad, la innovación y el trabajo en equipo. Nos
-            especializamos en crear soluciones web personalizadas que se adaptan a tus necesidades y aportan valor a tus proyectos. <ComputerIcon />
-          </h3>
+          <div className='flex w-full flex-row'>
+            <h3 className={subtitle({})}>
+              En NexosoftDev, creemos en el poder de la creatividad, la innovación y el trabajo en equipo. Nos
+              especializamos en crear soluciones web personalizadas que se adaptan a tus necesidades y aportan valor a
+              tus proyectos.
+            </h3>
+            <FaBeer />
+          </div>
         </div>
       </section>
     </DefaultLayout>
