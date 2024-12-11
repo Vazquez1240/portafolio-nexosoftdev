@@ -12,6 +12,12 @@ export const title = tv({
       pink: "from-[#FF72E1] to-[#F54C7A]",
       foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
     },
+    animation: {
+      fade: "animate-fade",
+      bounce: "animate-bounce",
+      spin: "animate-spin",
+      pulse: "animate-pulse",
+    },
     size: {
       sm: "text-3xl lg:text-4xl",
       md: "text-[2.3rem] lg:text-5xl leading-9",
@@ -41,13 +47,25 @@ export const title = tv({
 });
 
 export const subtitle = tv({
-  base: "w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 block max-w-full",
+  base: "w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 block max-w-full text-justify flex flex-row",
   variants: {
+    size: {
+      sm: "text-sm md:text-base lg:text-lg xl:text-xl",
+      md: "text-[1.3rem] lg:text-[1.4rem] leading-9",
+      lg: "text-4xl lg:text-6xl",
+    },
     fullWidth: {
       true: "!w-full",
     },
+    animation: {
+      fade: "animate-fade",
+      bounce: "animate-bounce",
+      spin: "animate-spin",
+      pulse: "animate-pulse",
+    },
   },
   defaultVariants: {
+    size: "md",
     fullWidth: true,
   },
 });
