@@ -15,9 +15,7 @@ const projects = [
   {
     title: "ID Digital",
     description:
-      "ID Digital es una herramienta para auntenticarte como usuario ante el municipio de Monterrey, Nuevo León." +
-      "Mi participación ahi fue la implementación de nuevas funcionalidades, como la funcionalidad de persona moral y" +
-      "persona fisica, dando dando atención tanto al frontend como al backend",
+      "ID Digital es una herramienta para auntenticarte como ciudadano ante el municipio de Monterrey, Nuevo León.",
     image: "/placeholder.svg?height=200&width=300",
     languages: ["Vue3", "Quasar", "Django", "Keycloak", "GCP"],
     longDescription:
