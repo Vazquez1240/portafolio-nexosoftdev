@@ -6,18 +6,20 @@ import {
   CardBody,
   CardFooter,
   Divider,
-  Link,
 } from "@nextui-org/react";
 import { Image } from "@nextui-org/image";
+import { Chip } from "@nextui-org/react";
 import React from "react";
 
 const projects = [
   {
-    title: "Proyecto 1",
+    title: "ID Digital",
     description:
-      "Una breve descripción del proyecto 1 y sus características principales.",
+      "ID Digital es una herramienta para auntenticarte como usuario ante el municipio de Monterrey, Nuevo León." +
+      "Mi participación ahi fue la implementación de nuevas funcionalidades, como la funcionalidad de persona moral y" +
+      "persona fisica, dando dando atención tanto al frontend como al backend",
     image: "/placeholder.svg?height=200&width=300",
-    languages: ["React", "Node.js", "MongoDB"],
+    languages: ["Vue3", "Quasar", "Django", "Keycloak", "GCP"],
     longDescription:
       "Una descripción más detallada del Proyecto 1, incluyendo los desafíos superados y los resultados obtenidos.",
   },
@@ -58,19 +60,20 @@ export default function ComponenteProyectos() {
                   width={40}
                 />
                 <div className="flex flex-col">
-                  <p className="text-md">NextUI</p>
-                  <p className="text-small text-default-500">nextui.org</p>
+                  <p className="text-md">{project.title}</p>
                 </div>
               </CardHeader>
               <Divider />
               <CardBody>
-                <p>Make beautiful websites regardless of your design experience.</p>
+                <p>{project.description}</p>
               </CardBody>
               <Divider />
               <CardFooter>
-                <Link isExternal showAnchorIcon href="https://github.com/nextui-org/nextui">
-                  Visit source code on GitHub.
-                </Link>
+                <div className="flex flex-row gap-2">
+                  {project.languages.map((language, index) => (
+                    <Chip key={index}>{language}</Chip>
+                  ))}
+                </div>
               </CardFooter>
             </Card>
           ))}
