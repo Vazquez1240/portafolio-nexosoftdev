@@ -46,8 +46,29 @@ export const title = tv({
   ],
 });
 
+export const button = tv({
+  base: "w-full md:w-1/2 text-lg lg:text-xl text-default-600 block max-w-full text-justify bg-transparent",
+  variants: {
+    size: {
+      sm: "text-sm md:text-base lg:text-lg xl:text-xl",
+      md: "text-md lg:text-lg leading-9",
+      lg: "text-lg lg:text-6xl",
+    },
+    animation: {
+      fade: "animate-fade",
+      bounce: "animate-bounce",
+      spin: "animate-spin",
+      pulse: "animate-pulse",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+    fullWidth: true,
+  },
+});
+
 export const subtitle = tv({
-  base: "w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 block max-w-full text-justify flex flex-row",
+  base: "w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 max-w-full text-justify flex flex-row",
   variants: {
     size: {
       sm: "text-sm md:text-base lg:text-lg xl:text-xl",

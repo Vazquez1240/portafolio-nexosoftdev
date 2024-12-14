@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/button";
 import { FaAngleDown } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
-import { subtitle, title } from "@/config/primitives";
+import { subtitle, title, button } from "@/components/primitives";
 
 export default function ComponenteHome() {
   const [isVisible, setIsVisible] = useState(true);
@@ -52,6 +52,7 @@ export default function ComponenteHome() {
         <Button
           isIconOnly
           aria-label="Desplazarse hacia abajo"
+          className={button({ animation: "bounce" })}
           lang="Ver proyectos"
           size="lg"
           onClick={scrollToProjects}
