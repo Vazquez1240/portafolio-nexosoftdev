@@ -4,7 +4,7 @@ import { Button } from "@nextui-org/button";
 import { FaAngleDown } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
-import { subtitle, title } from "@/components/primitives";
+import { subtitle, title } from "@/config/primitives";
 
 export default function ComponenteHome() {
   const [isVisible, setIsVisible] = useState(true);
@@ -32,8 +32,8 @@ export default function ComponenteHome() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center gap-4 h-full">
-      <div className="text-center justify-center w-full gap-4 flex flex-col">
+    <section className="flex flex-col items-center justify-center mb-32 h-[700px]">
+      <div className="text-center justify-center gap-3 flex flex-col w-[90%]">
         <h1 className={title({ fullWidth: true, animation: "fade" })}>
           ¡Bienvenidos a NexosoftDev!
         </h1>
@@ -52,7 +52,7 @@ export default function ComponenteHome() {
         <Button
           isIconOnly
           aria-label="Desplazarse hacia abajo"
-          className="animate-bounce shadow-lg hover:shadow-xl transition-shadow bg-transparent"
+          lang="Ver proyectos"
           size="lg"
           onClick={scrollToProjects}
         >

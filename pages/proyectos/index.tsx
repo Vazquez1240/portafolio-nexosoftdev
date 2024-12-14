@@ -1,4 +1,4 @@
-import { title } from "@/components/primitives";
+import { title } from "@/config/primitives";
 import DefaultLayout from "@/layouts/default";
 
 export default function DocsPage() {

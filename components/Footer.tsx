@@ -2,7 +2,7 @@ import { Link } from "@nextui-org/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full flex items-center justify-center py-4">
+    <footer className="w-full flex items-center justify-center">
       <Link
         isExternal
         className="flex items-center gap-1 text-current"
