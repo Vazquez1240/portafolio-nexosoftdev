@@ -47,7 +47,7 @@ export const title = tv({
 });
 
 export const button = tv({
-  base: "w-full md:w-1/2 text-lg lg:text-xl text-default-600 block max-w-full text-justify bg-transparent",
+  base: "w-full md:w-1/2 text-lg lg:text-xl text-default-600 flex justify-center max-w-full text-justify bg-transparent",
   variants: {
     size: {
       sm: "text-sm md:text-base lg:text-lg xl:text-xl",

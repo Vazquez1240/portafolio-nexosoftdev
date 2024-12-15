@@ -32,16 +32,18 @@ export default function ComponenteHome() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center mb-32 h-[700px]">
+    <section className="flex flex-col items-center justify-center mb-32 md:mb-72 h-[750px] md:h-[850px] sm:h-auto px-4">
       <div className="text-center justify-center gap-3 flex flex-col w-[90%]">
-        <h1 className={title({ fullWidth: true, animation: "fade" })}>
+        <h1
+          className={title({ fullWidth: true, animation: "fade", size: "sm" })}
+        >
           ¡Bienvenidos a NexosoftDev!
         </h1>
         <h3 className={subtitle({ animation: "fade" })}>
-          En NexosoftDev, creemos en el poder de la creatividad, la innovación
-          innovación y el trabajo en equipo. Nos especializamos en crear
-          soluciones web personalizadas que se adaptan a tus necesidades y
-          aportan aportan valor a tus proyectos. 🚀✨
+          En NexosoftDev, creemos en el poder de la creatividad, la innovación y
+          el trabajo en equipo. Nos especializamos en crear soluciones web
+          personalizadas que se adaptan a tus necesidades y aportan aportan
+          valor a tus proyectos. 🚀✨
         </h3>
       </div>
       <div
