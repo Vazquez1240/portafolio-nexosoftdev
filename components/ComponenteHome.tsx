@@ -24,7 +24,7 @@ export default function ComponenteHome() {
   }, []);
 
   const scrollToProjects = () => {
-    const projectsSection = document.getElementById("proyectos");
+    const projectsSection = document.getElementById("servicios");
 
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: "smooth" });
@@ -32,7 +32,7 @@ export default function ComponenteHome() {
   };
 
   return (
-    <section className="flex flex-col items-center justify-center mb-32 md:mb-72 h-[750px] md:h-[850px] sm:h-auto px-4">
+    <section className="flex flex-col items-center justify-center mb-32 md:mb-72 h-[750px] md:h-[500px] sm:h-auto px-4">
       <div className="text-center justify-center gap-3 flex flex-col w-[90%]">
         <h1
           className={title({ fullWidth: true, animation: "fade", size: "sm" })}
