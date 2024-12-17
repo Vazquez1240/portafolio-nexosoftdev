@@ -67,6 +67,26 @@ export const button = tv({
   },
 });
 
+export const card = tv({
+  base: "text-lg lg:text-lg lg:text-xl flex justify-center",
+  variants: {
+    size: {
+      sm: "text-sm md:text-base lg:text-lg xl:text-xl w-[350px] md:w-[380px] lg:w-[500px] xl:[650px]",
+      md: "text-md md:text-base lg:text-lg xl:text-xl w-[550px]",
+    },
+    animation: {
+      fade: "animate-fade",
+      bounce: "animate-bounce",
+      spin: "animate-spin",
+      pulse: "animate-pulse",
+    },
+  },
+  defaultVariants: {
+    size: "sm",
+    fullWidth: true,
+  },
+});
+
 export const subtitle = tv({
   base: "w-full md:w-1/2 my-2 text-lg lg:text-xl text-default-600 max-w-full text-justify flex flex-row",
   variants: {

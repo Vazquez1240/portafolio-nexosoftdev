@@ -24,6 +24,11 @@ module.exports = {
         },
       },
     },
+    variants: {
+      extend: {
+        gridTemplateColumns: ['responsive'],
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
