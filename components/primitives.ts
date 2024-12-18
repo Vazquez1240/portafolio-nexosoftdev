@@ -68,10 +68,10 @@ export const button = tv({
 });
 
 export const card = tv({
-  base: "text-lg lg:text-lg lg:text-xl flex justify-center",
+  base: "text-lg lg:text-lg lg:text-xl flex justify-center hover:scale-105",
   variants: {
     size: {
-      sm: "text-sm md:text-base lg:text-lg xl:text-xl w-[350px] md:w-[380px] lg:w-[500px] xl:[650px]",
+      sm: "text-sm md:text-base lg:text-lg xl:text-md w-[350px] md:w-[380px] lg:w-[380px] xl:[650px]",
       md: "text-md md:text-base lg:text-lg xl:text-xl w-[550px]",
     },
     animation: {
