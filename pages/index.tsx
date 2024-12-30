@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { Navbar } from "@/components/navbar";
 // import DefaultLayout from "@/layouts/default";
 
+import ComponenteElegirnos from "@/components/ComponenteElegirnos";
+
 export default function IndexPage() {
   return (
     <NextUIProvider>
@@ -15,6 +17,7 @@ export default function IndexPage() {
         <main className="w-full h-full flex flex-col">
           <ComponenteHome />
           <ComponenteServicios />
+          <ComponenteElegirnos />
         </main>
         <footer>
           <Footer />

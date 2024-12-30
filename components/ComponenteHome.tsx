@@ -11,7 +11,7 @@ export default function ComponenteHome() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
+      if (window.pageYOffset > 100) {
         setIsVisible(false);
       } else {
         setIsVisible(true);

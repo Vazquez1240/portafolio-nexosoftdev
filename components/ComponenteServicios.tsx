@@ -1,14 +1,13 @@
 import { Card, CardHeader, Divider, CardBody } from "@nextui-org/react";
 
 import { title, card } from "@/components/primitives";
-
 import { Servicios } from "@/utils/servicios";
 import { IconosServicios } from "@/utils/icons";
 
 export default function ComponenteServicios() {
   return (
     <section
-      className="mb-32 flex flex-col gap-14 justify-center items-center"
+      className="mb-56 flex flex-col gap-14 justify-center items-center w-full"
       id="servicios"
     >
       <div>

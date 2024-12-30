@@ -1,8 +1,12 @@
-import { ComputadoraIcon, CloudIcon, DesingIcon, FirebaseIcon } from "@/components/icons";
+import { FaRobot, FaCogs, FaCreditCard } from "react-icons/fa";
+
+import { ComputadoraIcon, CloudIcon, DesingIcon } from "@/components/icons";
 
 export const IconosServicios = {
   desarrollo: ComputadoraIcon,
   nube: CloudIcon,
   diseño: DesingIcon,
-  firebase: FirebaseIcon,
+  ia: FaRobot,
+  cms: FaCogs,
+  pago: FaCreditCard,
 };

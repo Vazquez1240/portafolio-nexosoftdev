@@ -18,9 +18,21 @@ export const Servicios = [
       "Diseñamos interfaces intuitivas y atractivas que mejoran la experiencia del usuario, aumentan la satisfacción del cliente y optimizan la conversión.",
   },
   {
-    title: "Desarrollo con Firebase",
-    icon: "firebase",
+    title: "Desarrollo de Chatbots e Inteligencia Artificial",
+    icon: "ia",
     description:
-      "Implementamos soluciones rápidas y escalables utilizando Firebase para autenticación, bases de datos en tiempo real, almacenamiento y más.",
+      "Creamos chatbots personalizados y soluciones basadas en inteligencia artificial para automatizar la atención al cliente, mejorar la interacción y optimizar la toma de decisiones en tiempo real.",
+  },
+  {
+    title: "Integración de Sistemas de Gestión de Contenido (CMS)",
+    icon: "cms",
+    description:
+      "Implementamos plataformas CMS como Wagtail, WordPress, Strapi, o soluciones a medida para facilitar la gestión y actualización de contenido sin necesidad de conocimientos técnicos.",
+  },
+  {
+    title: "Integración de Pasarelas de Pago",
+    icon: "pago",
+    description:
+      "Implementamos soluciones de pago seguras y eficientes como Stripe, PayPal, OpenPay o MercadoPago, permitiendo a tus usuarios realizar compras o pagos en línea de manera sencilla y confiable.",
   },
 ];
