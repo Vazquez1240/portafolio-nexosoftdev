@@ -83,7 +83,7 @@ export function ComponenteCarrusel({
             </div>
             <div className="flex flex-col justify-center p-6">
               <div className="flex items-center mb-4">
-                <currentItem.icon className="w-8 h-8 mr-2 text-primary" />
+                <currentItem.icon className="w-8 h-8 mr-2" />
                 <h3 className="text-2xl font-bold">{currentItem.title}</h3>
               </div>
               <p className="text-foreground-500">{currentItem.description}</p>

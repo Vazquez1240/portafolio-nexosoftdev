@@ -1,4 +1,4 @@
-import { FaCheckCircle, FaClock, FaUserFriends} from "react-icons/fa";
+import { FaCheckCircle, FaClock, FaUserFriends } from "react-icons/fa";
 import { LuZap } from "react-icons/lu";
 
 import { CarruselTypeProps } from "@/interfaces/carruselProps";
@@ -33,6 +33,7 @@ export const ElegirnosData: CarruselTypeProps[] = [
     title: "Tecnología de Vanguardia",
     description:
       "Utilizamos las últimas tecnologías para garantizar soluciones modernas y eficientes.",
-    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image:
+      "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
 ];
