@@ -8,27 +8,30 @@ export const ElegirnosData: CarruselTypeProps[] = [
     title: "Experiencia Comprobada",
     description:
       "Años de experiencia en el desarrollo de soluciones tecnológicas innovadoras.",
-    image: "/placeholder.svg?height=400&width=600",
+    image:
+      "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     icon: FaClock,
     title: "Entrega Puntual",
     description:
       "Nos comprometemos a entregar proyectos de alta calidad en el tiempo acordado.",
-    image: "/placeholder.svg?height=400&width=600",
+    image:
+      "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     icon: FaUserFriends,
     title: "Enfoque Personalizado",
     description:
       "Trabajamos estrechamente con cada cliente para entender y satisfacer sus necesidades únicas.",
-    image: "/placeholder.svg?height=400&width=600",
+    image:
+      "https://images.pexels.com/photos/5717266/pexels-photo-5717266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     icon: LuZap,
     title: "Tecnología de Vanguardia",
     description:
       "Utilizamos las últimas tecnologías para garantizar soluciones modernas y eficientes.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
 ];
