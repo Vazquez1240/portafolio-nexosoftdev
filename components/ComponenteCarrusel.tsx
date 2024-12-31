@@ -61,7 +61,7 @@ export function ComponenteCarrusel({
     resetInterval();
 
     return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current); // Limpia el intervalo al desmontar
+      if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, [auto_display, time, items.length]);
 
