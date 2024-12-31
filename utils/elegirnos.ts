@@ -1,5 +1,6 @@
 import { FaCheckCircle, FaClock, FaUserFriends} from "react-icons/fa";
 import { LuZap } from "react-icons/lu";
+
 import { CarruselTypeProps } from "@/interfaces/carruselProps";
 
 export const ElegirnosData: CarruselTypeProps[] = [

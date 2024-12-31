@@ -30,10 +30,12 @@ export function ComponenteCarrusel({
       : ["bg-gray-200", "bg-gray-400"];
 
   const siguienteSlide = () => {
+    resetInterval();
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
 
   const anteriorSlide = () => {
+    resetInterval();
     setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + items.length) % items.length,
     );
@@ -89,7 +91,7 @@ export function ComponenteCarrusel({
           </div>
         </CardBody>
       </Card>
-      <div className="absolute z-30 flex -translate-x-1/2 bottom-3 left-1/2 space-x-5 rtl:space-x-reverse">
+      <div className="absolute hidden sm:flex lg:flex xl:flex z-30 -translate-x-1/2 bottom-3 left-1/2 space-x-5 rtl:space-x-reverse">
         {items.map((item, index) => (
           <button
             key={index}
