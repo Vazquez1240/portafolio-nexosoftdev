@@ -9,7 +9,11 @@ export default function ComponenteElegirnos() {
         <h3 className={title({ size: "sm" })}>¿Porque elegirnos?</h3>
       </div>
       <div className="flex justify-center w-full">
-        <ComponenteCarrusel items={ElegirnosData}/>
+        <ComponenteCarrusel
+          auto_display={true}
+          items={ElegirnosData}
+          time={5000}
+        />
       </div>
     </section>
   );
