@@ -12,7 +12,7 @@ export default function ComponenteElegirnos() {
         <ComponenteCarrusel
           auto_display={true}
           items={ElegirnosData}
-          time={5000}
+          time={3000}
         />
       </div>
     </section>

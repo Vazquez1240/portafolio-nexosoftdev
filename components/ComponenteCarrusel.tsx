@@ -68,12 +68,12 @@ export function ComponenteCarrusel({
   const currentItem = items[currentIndex];
 
   return (
-    <div className="relative w-[85%] mx-auto mb-32" data-carousel="slide">
+    <div className="relative w-[85%] mx-auto mb-32">
       <Card className="w-full h-full bg-transparent">
         <CardBody>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex items-center justify-center overflow-hidden">
-              <div className="relative h-52 sm:h-72 lg:h-72 xl:h-72 md:h72 w-96 overflow-hidden">
+              <div className="relative h-52 sm:h-72 lg:h-72 xl:h-72 md:h-72 w-96 overflow-hidden">
                 {items.map((item, index) => (
                   <div
                     key={index}
@@ -85,7 +85,7 @@ export function ComponenteCarrusel({
                   >
                     <Image
                       alt={item.title}
-                      className="object-cover rounded-lg"
+                      className="object-cover rounded-lg w-full h-full max-w-full"
                       height={400}
                       src={item.image}
                       width={400}
@@ -105,7 +105,7 @@ export function ComponenteCarrusel({
         </CardBody>
       </Card>
       <div
-        className="absolute hidden sm:flex lg:flex xl:flex z-30 -translate-x-1/2 bottom-3 left-1/2 space-x-5 rtl:space-x-reverse">
+        className="absolute flex sm:flex lg:flex xl:flex z-30 -translate-x-1/2 bottom-3 left-1/2 space-x-5 rtl:space-x-reverse">
         {items.map((item, index) => (
           <button
             key={index}

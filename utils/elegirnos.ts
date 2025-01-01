@@ -10,7 +10,7 @@ export const ElegirnosData: CarruselTypeProps[] = [
     description:
       "Años de experiencia en el desarrollo de soluciones tecnológicas innovadoras.",
     image:
-      "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg",
   },
   {
     icon: FaClock,
@@ -18,7 +18,7 @@ export const ElegirnosData: CarruselTypeProps[] = [
     description:
       "Nos comprometemos a entregar proyectos de alta calidad en el tiempo acordado.",
     image:
-      "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/39559/ipad-mockup-apple-business-39559.jpeg",
   },
   {
     icon: FaUserFriends,
@@ -26,7 +26,7 @@ export const ElegirnosData: CarruselTypeProps[] = [
     description:
       "Trabajamos estrechamente con cada cliente para entender y satisfacer sus necesidades únicas.",
     image:
-      "https://images.pexels.com/photos/5717266/pexels-photo-5717266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/5717266/pexels-photo-5717266.jpeg",
   },
   {
     icon: LuZap,
@@ -34,6 +34,6 @@ export const ElegirnosData: CarruselTypeProps[] = [
     description:
       "Utilizamos las últimas tecnologías para garantizar soluciones modernas y eficientes.",
     image:
-      "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg",
   },
 ];
