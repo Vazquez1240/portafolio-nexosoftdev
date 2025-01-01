@@ -68,20 +68,33 @@ export function ComponenteCarrusel({
   const currentItem = items[currentIndex];
 
   return (
-    <div className="relative w-[85%] mx-auto mb-32">
+    <div className="relative w-[85%] mx-auto mb-32" data-carousel="slide">
       <Card className="w-full h-full bg-transparent">
         <CardBody>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex items-center justify-center">
-              <Image
-                alt={currentItem.title}
-                className="object-cover rounded-lg"
-                height={400}
-                src={currentItem.image}
-                width={400}
-              />
+            <div className="flex items-center justify-center overflow-hidden">
+              <div className="relative h-52 sm:h-72 lg:h-72 xl:h-72 md:h72 w-96 overflow-hidden">
+                {items.map((item, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out transform ${
+                      currentIndex === index
+                        ? "opacity-100 z-10 scale-100"
+                        : "opacity-0 z-0 scale-90"
+                    }`}
+                  >
+                    <Image
+                      alt={item.title}
+                      className="object-cover rounded-lg"
+                      height={400}
+                      src={item.image}
+                      width={400}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-col justify-center p-6">
+            <div className="flex flex-col justify-center p-8">
               <div className="flex items-center mb-4">
                 <currentItem.icon className="w-8 h-8 mr-2" />
                 <h3 className="text-2xl font-bold">{currentItem.title}</h3>
@@ -91,7 +104,8 @@ export function ComponenteCarrusel({
           </div>
         </CardBody>
       </Card>
-      <div className="absolute hidden sm:flex lg:flex xl:flex z-30 -translate-x-1/2 bottom-3 left-1/2 space-x-5 rtl:space-x-reverse">
+      <div
+        className="absolute hidden sm:flex lg:flex xl:flex z-30 -translate-x-1/2 bottom-3 left-1/2 space-x-5 rtl:space-x-reverse">
         {items.map((item, index) => (
           <button
             key={index}

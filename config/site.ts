@@ -12,10 +12,6 @@ export const siteConfig = {
       label: "Nosotros",
       href: "/nosotros",
     },
-    {
-      label: "Proyectos",
-      href: "/proyectos",
-    },
   ],
   navMenuItems: [
     {
@@ -25,10 +21,6 @@ export const siteConfig = {
     {
       label: "Nosotros",
       href: "/nosotros",
-    },
-    {
-      label: "Proyectos",
-      href: "/proyectos",
     },
   ],
   links: {
