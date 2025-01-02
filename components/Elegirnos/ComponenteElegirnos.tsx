@@ -2,7 +2,6 @@ import { title } from "@/components/primitives";
 import { ElegirnosData } from "@/utils/elegirnos";
 import { ComponenteCarrusel } from "@/components/Carrusel/ComponenteCarrusel";
 
-
 export default function ComponenteElegirnos() {
   return (
     <section className="flex flex-col gap-14 justify-center items-center w-full">
