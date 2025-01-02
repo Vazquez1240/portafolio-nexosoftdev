@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 import { IconSvgProps } from "@/types";
 
@@ -8,9 +9,17 @@ export const Logo: React.FC<IconSvgProps> = ({
   height,
   ...props
 }) => {
-  const theme = useTheme();
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  const isLight = theme.theme === "light";
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) {
+    return null;
+  }
+
+  const isLight = theme === "light" || resolvedTheme === "light";
 
   return (
     <svg
