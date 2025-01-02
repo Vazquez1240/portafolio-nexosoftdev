@@ -1,13 +1,11 @@
 import { NextUIProvider } from "@nextui-org/react";
 
 import ComponenteHome from "@/components/ComponenteHome";
-// import ComponenteProyectos from "@/components/ComponenteProyectos";
-import ComponenteServicios from "@/components/ComponenteServicios";
+import ComponenteServicios from "@/components/Servicios/ComponenteServicios";
+import ComponenteNosotros from "@/components/Nosotros/ComponenteNosotros";
 import Footer from "@/components/Footer";
 import { Navbar } from "@/components/navbar";
-// import DefaultLayout from "@/layouts/default";
-
-import ComponenteElegirnos from "@/components/ComponenteElegirnos";
+import ComponenteElegirnos from "@/components/Elegirnos/ComponenteElegirnos";
 
 export default function IndexPage() {
   return (
@@ -18,6 +16,7 @@ export default function IndexPage() {
           <ComponenteHome />
           <ComponenteServicios />
           <ComponenteElegirnos />
+          <ComponenteNosotros />
         </main>
         <footer>
           <Footer />

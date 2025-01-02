@@ -1,6 +1,6 @@
 import { FaRobot, FaCogs, FaCreditCard } from "react-icons/fa";
 
-import { ComputadoraIcon, CloudIcon, DesingIcon } from "@/components/icons";
+import { ComputadoraIcon, CloudIcon, DesingIcon } from "@/components/Icons/icons";
 
 export const IconosServicios = {
   desarrollo: ComputadoraIcon,

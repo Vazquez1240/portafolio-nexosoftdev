@@ -5,6 +5,7 @@ import { Card, CardBody, Button } from "@nextui-org/react";
 import Image from "next/image";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { useTheme } from "next-themes";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { CarruselTypeProps } from "@/interfaces/carruselProps";
 
@@ -74,38 +75,54 @@ export function ComponenteCarrusel({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex items-center justify-center overflow-hidden">
               <div className="relative h-52 sm:h-72 lg:h-72 xl:h-72 md:h-72 w-96 overflow-hidden">
-                {items.map((item, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out transform ${
-                      currentIndex === index
-                        ? "opacity-100 z-10 scale-100"
-                        : "opacity-0 z-0 scale-90"
-                    }`}
-                  >
-                    <Image
-                      alt={item.title}
-                      className="object-cover rounded-lg w-full h-full max-w-full"
-                      height={400}
-                      src={item.image}
-                      width={400}
-                    />
-                  </div>
-                ))}
+                <AnimatePresence mode="wait">
+                  {items.map(
+                    (item, index) =>
+                      currentIndex === index && (
+                        <motion.div
+                          key={index}
+                          animate={{ opacity: 1, x: 0 }}
+                          className="absolute inset-0"
+                          exit={{ opacity: 0, x: -50 }}
+                          initial={{ opacity: 0, x: 50 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <Image
+                            alt={item.title}
+                            className="object-cover rounded-lg w-full h-full max-w-full"
+                            height={400}
+                            src={item.image}
+                            width={400}
+                          />
+                        </motion.div>
+                      ),
+                  )}
+                </AnimatePresence>
               </div>
             </div>
             <div className="flex flex-col justify-center p-8">
-              <div className="flex items-center mb-4">
-                <currentItem.icon className="w-8 h-8 mr-2" />
-                <h3 className="text-2xl font-bold">{currentItem.title}</h3>
-              </div>
-              <p className="text-foreground-500">{currentItem.description}</p>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  initial={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <div className="flex items-center mb-4">
+                    <currentItem.icon className="w-8 h-8 mr-2" />
+                    <h3 className="text-2xl font-bold">{currentItem.title}</h3>
+                  </div>
+                  <p className="text-foreground-500">
+                    {currentItem.description}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </CardBody>
       </Card>
-      <div
-        className="absolute flex sm:flex lg:flex xl:flex z-30 -translate-x-1/2 bottom-3 left-1/2 space-x-5 rtl:space-x-reverse">
+      <div className="absolute flex sm:flex lg:flex xl:flex z-30 -translate-x-1/2 bottom-3 left-1/2 space-x-5 rtl:space-x-reverse">
         {items.map((item, index) => (
           <button
             key={index}
@@ -120,12 +137,12 @@ export function ComponenteCarrusel({
         ))}
       </div>
       <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
-        <Button isIconOnly className="bg-transparent" onClick={anteriorSlide}>
+        <Button isIconOnly className="bg-transparent" onPress={anteriorSlide}>
           <LuChevronLeft className="w-6 h-6" />
         </Button>
       </div>
       <div className="absolute top-1/2 right-0 bg-transparent transform -translate-y-1/2">
-        <Button isIconOnly className="bg-transparentw" onClick={siguienteSlide}>
+        <Button isIconOnly className="bg-transparent" onPress={siguienteSlide}>
           <LuChevronRight className="w-6 h-6" />
         </Button>
       </div>

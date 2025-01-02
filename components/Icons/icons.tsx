@@ -8,9 +8,9 @@ export const Logo: React.FC<IconSvgProps> = ({
   height,
   ...props
 }) => {
-  const { theme } = useTheme();
+  const theme = useTheme();
 
-  const isLight = theme === "light";
+  const isLight = theme.theme === "light";
 
   return (
     <svg
