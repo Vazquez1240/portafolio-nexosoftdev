@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Card, CardBody, Button } from "@nextui-org/react";
-import Image from "next/image";
+import { Image } from "@nextui-org/image";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
@@ -88,8 +88,6 @@ export function ComponenteCarrusel({
                           transition={{ duration: 0.3 }}
                         >
                           <Image
-                            fill
-                            priority
                             alt={item.title}
                             className="rounded-lg"
                             sizes="(max-width: 768px) 100vw, 50vw"
