@@ -15,6 +15,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>,
 ): Promise<void> {
+  if (req.method === "GET") {
+    return res.status(200).json({ message: "Bienvenido a NexosoftDev" });
+  }
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Método no permitido" });
   }
