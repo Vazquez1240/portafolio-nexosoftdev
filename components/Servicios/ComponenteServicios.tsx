@@ -1,6 +1,6 @@
 import { Card, CardHeader, Divider, CardBody } from "@nextui-org/react";
 
-import { title, card } from "@/components/primitives";
+import { title } from "@/components/primitives";
 import { Servicios } from "@/utils/servicios";
 import { IconosServicios } from "@/utils/icons";
 
