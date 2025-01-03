@@ -19,7 +19,7 @@ export default function ComponenteNosotros() {
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
               Acerca de Nosotros
             </h2>
-            <p className="text-foreground-500 text-justify md:text-xl">
+            <p className="text-foreground-500 text-justify ">
               Nexosoft es una empresa innovadora dedicada a proporcionar
               soluciones tecnológicas de vanguardia. Nuestro equipo de expertos
               está comprometido con la excelencia y la satisfacción del cliente
