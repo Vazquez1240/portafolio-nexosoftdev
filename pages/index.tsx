@@ -6,6 +6,7 @@ import ComponenteNosotros from "@/components/Nosotros/ComponenteNosotros";
 import Footer from "@/components/Footer";
 import { Navbar } from "@/components/navbar";
 import ComponenteElegirnos from "@/components/Elegirnos/ComponenteElegirnos";
+import ComponenteContacto from "@/components/Contacto/ComponenteContacto";
 
 export default function IndexPage() {
   return (
@@ -17,6 +18,7 @@ export default function IndexPage() {
           <ComponenteServicios />
           <ComponenteElegirnos />
           <ComponenteNosotros />
+          <ComponenteContacto />
         </main>
         <footer>
           <Footer />

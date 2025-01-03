@@ -16,10 +16,10 @@ interface Props {
 }
 
 export function ComponenteCarrusel({
-                                     items,
-                                     auto_display = false,
-                                     time = 3000,
-                                   }: Props) {
+  items,
+  auto_display = false,
+  time = 3000,
+}: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -69,7 +69,7 @@ export function ComponenteCarrusel({
   const currentItem = items[currentIndex];
 
   return (
-    <div className="relative w-[85%] mx-auto mb-32">
+    <div className="relative w-[88%] mx-auto mb-32">
       <Card className="w-full h-full min-h-[600px] md:min-h-[240px] bg-transparent">
         <CardBody>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -90,13 +90,13 @@ export function ComponenteCarrusel({
                           <Image
                             alt={item.title}
                             className="rounded-lg"
+                            height={400}
                             sizes="(max-width: 768px) 100vw, 50vw"
                             src={item.image}
-                            width={400}
-                            height={400}
                             style={{
                               objectFit: "cover",
                             }}
+                            width={400}
                           />
                         </motion.div>
                       ),

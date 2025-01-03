@@ -13,7 +13,7 @@ export default function ComponenteNosotros() {
 
   return (
     <ComponenteAnimacion className="w-full py-12 md:py-24 lg:py-32 flex justify-center">
-      <div className="px-4 flex justify-center md:px-6 w-[85%]">
+      <div className="px-4 flex justify-center md:px-6 w-[90%]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <motion.div variants={fadeInUp}>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">

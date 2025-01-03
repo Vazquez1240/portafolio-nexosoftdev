@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo contacto de {{name}}</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+    :root {
+      --primary: #0072F5;
+      --secondary: #17C964;
+      --accent: #3694FF;
+      --background: #FFFFFF;
+      --foreground: #11181C;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F0F2F5;
+      margin: 0;
+      padding: 0;
+      color: var(--foreground);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background-color: var(--background);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      padding: 30px;
+      text-align: center;
+      color: white;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: var(--foreground);
+    }
+
+    .message-box {
+      background-color: #F9FAFB;
+      border: 1px solid #E4E7EB;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .message-box p {
+      margin: 0;
+    }
+
+    .highlight {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+
+    .footer {
+      background-color: #F9FAFB;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #687076;
+      border-top: 1px solid #E4E7EB;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Hola, nos acaba de contactar {{name}}.</h1>
+  </div>
+  <div class="content">
+    <p>¡Tenemos un nuevo mensaje de contacto! Tratemos de responder a la brevedad.</p>
+    <p>Correo electrónico del contacto: <span class="highlight">{{email}}</span></p>
+    <p>Número telefonico del contacto: <span class="highlight">{{phone}}</span></p>
+    <div class="message-box">
+      <p><strong>Mensaje original:</strong></p>
+      <p>{{message}}</p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>Este es un correo automático. Por favor, no responda directamente a este mensaje.</p>
+  </div>
+</div>
+</body>
+</html>
+
