@@ -1,12 +1,18 @@
-import { FaRobot, FaCogs, FaCreditCard } from "react-icons/fa";
+import {
+  LuCloud,
+  LuPaintbrush,
+  LuBot,
+  LuShoppingCart,
+  LuCreditCard,
+} from "react-icons/lu";
 
-import { ComputadoraIcon, CloudIcon, DesingIcon } from "@/components/Icons/icons";
+import { ComputadoraIcon } from "@/components/Icons/icons";
 
 export const IconosServicios = {
   desarrollo: ComputadoraIcon,
-  nube: CloudIcon,
-  diseño: DesingIcon,
-  ia: FaRobot,
-  cms: FaCogs,
-  pago: FaCreditCard,
+  nube: LuCloud,
+  diseño: LuPaintbrush,
+  ia: LuBot,
+  cms: LuShoppingCart,
+  pago: LuCreditCard,
 };

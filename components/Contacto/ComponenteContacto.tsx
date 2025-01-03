@@ -13,18 +13,18 @@ export default function ComponenteContacto() {
 
   return (
     <section>
-      <ComponenteAnimacion className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6 flex justify-center items-center flex-col w-full">
+      <ComponenteAnimacion className="w-full py-12 md:py-24 lg:py-32 px-0">
+        <div className="flex justify-center items-center flex-col w-full">
           <motion.h2
             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12"
             variants={fadeInUp}
           >
             Contáctanos
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-[90%] p-4">
-            <motion.div variants={fadeInUp}>
-              <div className="backdrop-blur-lg sm: ml-0 sm:ml-32 md:ml-0 lg:ml-0 xl:ml-0">
-                <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start w-full px-4 md:px-8 lg:px-16">
+            <motion.div className="h-full" variants={fadeInUp}>
+              <div className="backdrop-blur-lg flex justify-center items-center h-full">
+                <div className="text-center">
                   <h3 className="text-2xl font-semibold mb-4">
                     Información de Contacto
                   </h3>
@@ -45,8 +45,7 @@ export default function ComponenteContacto() {
                 </div>
               </div>
             </motion.div>
-            <motion.div className="w-full ml-0 sm:ml-44 md:ml-0 lg:ml-0 xl:ml-0" variants={fadeInUp}>
-              {/*<ContactForm /> */}
+            <motion.div className="w-full" variants={fadeInUp}>
               <ComponenteFormulario />
             </motion.div>
           </div>

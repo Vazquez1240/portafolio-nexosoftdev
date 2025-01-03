@@ -120,11 +120,11 @@ export default function ComponenteFormulario() {
   }
 
   return (
-    <Card className="bg-background/60 backdrop-blur-lg">
-      <CardBody>
+    <Card className="bg-background/60 backdrop-blur-lg w-full">
+      <CardBody className="px-4 py-6 md:px-6">
         <motion.form
           animate={{ opacity: 1, y: 0 }}
-          className="space-y-6"
+          className="space-y-6 w-full"
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
         >
