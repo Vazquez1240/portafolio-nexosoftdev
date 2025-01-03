@@ -75,7 +75,7 @@ export default function ComponenteFormulario() {
     }
     // @ts-ignore
     const response = await axios.post(
-      "https://nexosoftdev.com/api/sendEmail/",
+      "http://localhost:3000/api/sendEmail/",
       formData,
       {
         headers: {
