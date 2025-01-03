@@ -11,16 +11,11 @@ import { Link } from "@nextui-org/link";
 import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
+import { FaXTwitter, FaGithubAlt, FaInstagram } from "react-icons/fa6";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/Switch/theme-switch";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  Logo,
-  InstagramIcon,
-} from "@/components/Icons/icons";
+import { Logo } from "@/components/Icons/icons";
 
 export const Navbar = () => {
   /*const searchInput = (
@@ -49,7 +44,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo/>
+            <Logo />
             <p className="font-bold text-inherit">NexosoftDev</p>
           </NextLink>
         </NavbarBrand>
@@ -77,21 +72,21 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden sm:flex gap-2">
           <Link isExternal href={siteConfig.links.twitter} title="Twitter">
-            <TwitterIcon className="text-default-500" />
+            <FaXTwitter className="text-default-500 w-6 h-6" />
           </Link>
-          <Link isExternal href={siteConfig.links.discord} title="Discord">
-            <DiscordIcon className="text-default-500" />
+          <Link isExternal href={siteConfig.links.instagram} title="Instagram">
+            <FaInstagram className="text-default-500 w-6 h-6" />
           </Link>
           <Link isExternal href={siteConfig.links.github} title="GitHub">
-            <InstagramIcon className="text-default-500" />
+            <FaGithubAlt className="text-default-500 w-6 h-6" />
           </Link>
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
+        <Link isExternal href={siteConfig.links.github} title="GitHub">
+          <FaGithubAlt className="text-default-500 w-6 h-6" />
         </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />
