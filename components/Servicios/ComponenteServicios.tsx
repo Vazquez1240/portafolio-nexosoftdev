@@ -12,7 +12,8 @@ export default function ComponenteServicios() {
     >
       <div>
         <h3
-          className={title({ fullWidth: true, animation: "fade", size: "sm" })}>
+          className={title({ fullWidth: true, animation: "fade", size: "sm" })}
+        >
           Nuestros Servicios
         </h3>
       </div>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Card, CardBody, Button } from "@nextui-org/react";
-import { Image } from "@nextui-org/image";
+import Image from "next/image";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,10 +16,10 @@ interface Props {
 }
 
 export function ComponenteCarrusel({
-  items,
-  auto_display = false,
-  time = 3000,
-}: Props) {
+                                     items,
+                                     auto_display = false,
+                                     time = 3000,
+                                   }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -70,28 +70,30 @@ export function ComponenteCarrusel({
 
   return (
     <div className="relative w-[85%] mx-auto mb-32">
-      <Card className="w-full min-h-[600px] md:min-h-[500px] bg-transparent">
+      <Card className="w-full h-full min-h-[600px] md:min-h-[240px] bg-transparent">
         <CardBody>
-          <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-            <div className="relative w-full h-[280px] md:h-full">
-              <div className="absolute inset-0 m-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="flex items-center justify-center overflow-hidden">
+              <div className="relative h-52 sm:h-72 lg:h-72 xl:h-72 md:h-72 w-96 overflow-hidden">
                 <AnimatePresence mode="wait">
                   {items.map(
                     (item, index) =>
                       currentIndex === index && (
                         <motion.div
                           key={index}
-                          animate={{ opacity: 1 }}
-                          className="relative w-full h-full"
-                          exit={{ opacity: 0 }}
-                          initial={{ opacity: 0 }}
-                          transition={{ duration: 0.3 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          className="absolute inset-0"
+                          exit={{ opacity: 0, x: -50 }}
+                          initial={{ opacity: 0, x: 50 }}
+                          transition={{ duration: 0.5 }}
                         >
                           <Image
                             alt={item.title}
                             className="rounded-lg"
                             sizes="(max-width: 768px) 100vw, 50vw"
                             src={item.image}
+                            width={400}
+                            height={400}
                             style={{
                               objectFit: "cover",
                             }}
@@ -102,14 +104,14 @@ export function ComponenteCarrusel({
                 </AnimatePresence>
               </div>
             </div>
-            <div className="flex flex-col justify-center px-4 py-6 md:p-8">
+            <div className="flex flex-col justify-center p-8">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentIndex}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  initial={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  initial={{ opacity: 0, x: 50 }}
+                  transition={{ duration: 0.5 }}
                 >
                   <div className="flex items-center mb-4">
                     <currentItem.icon className="w-8 h-8 mr-2" />
@@ -124,13 +126,13 @@ export function ComponenteCarrusel({
           </div>
         </CardBody>
       </Card>
-      <div className="absolute flex justify-center w-full space-x-5 bottom-3">
-        {items.map((_, index) => (
+      <div className="absolute flex sm:flex lg:flex xl:flex z-30 -translate-x-1/2 bottom-3 left-1/2 space-x-5 rtl:space-x-reverse">
+        {items.map((item, index) => (
           <button
             key={index}
             aria-current={currentIndex === index}
             aria-label={`Slide ${index + 1}`}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-3 h-3 rounded-full  ${
               currentIndex === index ? colorIndicador[0] : colorIndicador[1]
             }`}
             type="button"
@@ -138,20 +140,16 @@ export function ComponenteCarrusel({
           />
         ))}
       </div>
-      <Button
-        isIconOnly
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-transparent"
-        onPress={anteriorSlide}
-      >
-        <LuChevronLeft className="w-6 h-6" />
-      </Button>
-      <Button
-        isIconOnly
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-transparent"
-        onPress={siguienteSlide}
-      >
-        <LuChevronRight className="w-6 h-6" />
-      </Button>
+      <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
+        <Button isIconOnly className="bg-transparent" onPress={anteriorSlide}>
+          <LuChevronLeft className="w-6 h-6" />
+        </Button>
+      </div>
+      <div className="absolute top-1/2 right-0 bg-transparent transform -translate-y-1/2">
+        <Button isIconOnly className="bg-transparent" onPress={siguienteSlide}>
+          <LuChevronRight className="w-6 h-6" />
+        </Button>
+      </div>
     </div>
   );
 }
