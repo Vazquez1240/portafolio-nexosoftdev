@@ -23,7 +23,7 @@ export default function ComponenteContacto() {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center w-[90%] p-4">
             <motion.div variants={fadeInUp}>
-              <div className="backdrop-blur-lg">
+              <div className="backdrop-blur-lg sm: ml-0 sm:ml-32 md:ml-0 lg:ml-0 xl:ml-0">
                 <div>
                   <h3 className="text-2xl font-semibold mb-4">
                     Información de Contacto
@@ -45,7 +45,7 @@ export default function ComponenteContacto() {
                 </div>
               </div>
             </motion.div>
-            <motion.div className="w-full" variants={fadeInUp}>
+            <motion.div className="w-full ml-0 sm:ml-44 md:ml-0 lg:ml-0 xl:ml-0" variants={fadeInUp}>
               {/*<ContactForm /> */}
               <ComponenteFormulario />
             </motion.div>
