@@ -11,7 +11,7 @@ export default function ComponenteHome() {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 100) {
+      if (window.scrollY > 100) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
@@ -19,35 +19,33 @@ export default function ComponenteHome() {
     };
 
     window.addEventListener("scroll", toggleVisibility);
-
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("servicios");
-
     if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: projectsSection.offsetTop,
+        behavior: "smooth"
+      });
     }
   };
 
   return (
-    <section className="flex flex-col items-center justify-center mb-32 md:mb-72 h-[750px] sm:h-[750px] md:h-[750px] lg:h-[700px] px-4">
-      <div className="text-center justify-center gap-3 md:gap-6 flex flex-col w-[90%] ">
-        <h1
-          className={title({ fullWidth: true, animation: "fade", size: "sm" })}
-        >
+    <section className="relative flex flex-col items-center justify-center min-h-[750px] px-4">
+      <div className="text-center justify-center gap-3 md:gap-6 flex flex-col w-[90%]">
+        <h1 className={title({ fullWidth: true, animation: "fade", size: "sm" })}>
           ¡Bienvenidos a NexosoftDev!
         </h1>
         <h3 className={subtitle({ animation: "fade" })}>
           En NexosoftDev, creemos en el poder de la creatividad, la innovación y
           el trabajo en equipo. Nos especializamos en crear soluciones web
-          personalizadas que se adaptan a tus necesidades y aportan aportan
-          valor a tus proyectos. 🚀✨
+          personalizadas que se adaptan a tus necesidades y aportan valor a tus proyectos. 🚀✨
         </h3>
       </div>
       <div
-        className={`absolute bottom-20 left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-in-out ${
+        className={`fixed bottom-20 left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-in-out z-50 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >

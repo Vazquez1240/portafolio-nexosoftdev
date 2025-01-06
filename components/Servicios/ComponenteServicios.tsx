@@ -6,17 +6,21 @@ import { IconosServicios } from "@/utils/icons";
 
 export default function ComponenteServicios() {
   return (
-    <section
-      className="py-24 px-4"
-      id="servicios"
-    >
+    <section className="py-24 px-2 w-full" id="servicios">
       <div className="container mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h3 className={title({ fullWidth: true, animation: "fade", size: "sm" })}>
+          <h3
+            className={title({
+              fullWidth: true,
+              animation: "fade",
+              size: "sm",
+            })}
+          >
             Nuestros Servicios
           </h3>
           <p className="text-muted-foreground mt-2">
-            Soluciones tecnológicas personalizadas para impulsar tu negocio al siguiente nivel
+            Soluciones tecnológicas personalizadas para impulsar tu negocio al
+            siguiente nivel
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

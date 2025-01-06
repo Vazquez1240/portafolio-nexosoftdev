@@ -75,7 +75,7 @@ export function ComponenteCarrusel({
 
   if (!mounted) {
     return (
-      <div className="relative w-[88%] mx-auto mb-32">
+      <div className="relative w-[90%] mx-auto mb-32">
         <div className="animate-pulse">
           <div className="h-64 bg-default-100/50 rounded-lg"></div>
           <div className="flex justify-center mt-4 space-x-2">
@@ -92,7 +92,7 @@ export function ComponenteCarrusel({
   }
 
   return (
-    <div className="relative w-[88%] mx-auto mb-32">
+    <div className="relative w-[90%] mx-auto mb-32">
       <Card className="w-full h-full min-h-[600px] md:min-h-[240px] bg-transparent">
         <CardBody>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "jijij",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "NexosoftDev",
+  description: "Soluciones tecnológicas innovadoras para tu negocio",
   navItems: [
     {
       label: "Inicio",

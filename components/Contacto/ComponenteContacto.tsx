@@ -13,7 +13,7 @@ export default function ComponenteContacto() {
 
   return (
     <section>
-      <ComponenteAnimacion className="w-full py-12 md:py-24 lg:py-32 px-0">
+      <ComponenteAnimacion className="w-full sm:w-[90%] py-12 md:py-24 lg:py-32 px-0">
         <div className="flex justify-center items-center flex-col w-full">
           <motion.h2
             className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12"
