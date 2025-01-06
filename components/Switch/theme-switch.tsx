@@ -20,7 +20,13 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   const { theme, setTheme } = useTheme();
 
   const onChange = () => {
+    document.documentElement.classList.add('theme-transition');
+    
     theme === "light" ? setTheme("dark") : setTheme("light");
+    
+    setTimeout(() => {
+      document.documentElement.classList.remove('theme-transition');
+    }, 300);
   };
 
   const {

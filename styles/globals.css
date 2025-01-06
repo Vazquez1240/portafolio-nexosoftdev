@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.theme-transition,
+.theme-transition *,
+.theme-transition *:before,
+.theme-transition *:after {
+  transition: all 0.3s ease-in-out !important;
+  transition-delay: 0 !important;
+}
+
+.theme-transition body {
+  transition: background-color 0.3s ease-in-out !important;
+}
