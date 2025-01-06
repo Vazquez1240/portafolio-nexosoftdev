@@ -19,15 +19,17 @@ export default function ComponenteHome() {
     };
 
     window.addEventListener("scroll", toggleVisibility);
+
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToProjects = () => {
     const projectsSection = document.getElementById("servicios");
+
     if (projectsSection) {
       window.scrollTo({
         top: projectsSection.offsetTop,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
@@ -35,13 +37,16 @@ export default function ComponenteHome() {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-[780px] px-4">
       <div className="text-center justify-center gap-3 md:gap-6 flex flex-col w-[90%]">
-        <h1 className={title({ fullWidth: true, animation: "fade", size: "sm" })}>
+        <h1
+          className={title({ fullWidth: true, animation: "fade", size: "sm" })}
+        >
           ¡Bienvenidos a NexosoftDev!
         </h1>
         <h3 className={subtitle({ animation: "fade" })}>
           En NexosoftDev, creemos en el poder de la creatividad, la innovación y
           el trabajo en equipo. Nos especializamos en crear soluciones web
-          personalizadas que se adaptan a tus necesidades y aportan valor a tus proyectos. 🚀✨
+          personalizadas que se adaptan a tus necesidades y aportan valor a tus
+          proyectos. 🚀✨
         </h3>
       </div>
       <div
