@@ -86,7 +86,7 @@ export default function ComponenteFormulario() {
     }
     // @ts-ignore
     const response = await axios.post(
-      "http://localhost:3000/api/sendEmail/",
+      "https://nexosoftdev.com/api/sendEmail/",
       formData,
       {
         headers: {
@@ -107,11 +107,11 @@ export default function ComponenteFormulario() {
       <Card className="bg-background/60 backdrop-blur-lg w-full">
         <CardBody className="px-4 py-6 md:px-6">
           <div className="animate-pulse space-y-6">
-            <div className="h-12 bg-default-100/50 rounded-lg"></div>
-            <div className="h-12 bg-default-100/50 rounded-lg"></div>
-            <div className="h-12 bg-default-100/50 rounded-lg"></div>
-            <div className="h-32 bg-default-100/50 rounded-lg"></div>
-            <div className="h-12 bg-default-100/50 rounded-lg"></div>
+            <div className="h-12 bg-default-100/50 rounded-lg" />
+            <div className="h-12 bg-default-100/50 rounded-lg" />
+            <div className="h-12 bg-default-100/50 rounded-lg" />
+            <div className="h-32 bg-default-100/50 rounded-lg" />
+            <div className="h-12 bg-default-100/50 rounded-lg" />
           </div>
         </CardBody>
       </Card>
@@ -173,7 +173,9 @@ export default function ComponenteFormulario() {
               name="name"
               placeholder="Tu nombre"
               startContent={
-                <LuUser className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`} />
+                <LuUser
+                  className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`}
+                />
               }
               value={formData.name}
               onChange={handleChange}
@@ -197,7 +199,9 @@ export default function ComponenteFormulario() {
               name="phone"
               placeholder="+52 123 456 7890"
               startContent={
-                <LuPhone className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`} />
+                <LuPhone
+                  className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`}
+                />
               }
               type="tel"
               value={formData.phone}
@@ -222,7 +226,9 @@ export default function ComponenteFormulario() {
               name="email"
               placeholder="tu@email.com"
               startContent={
-                <LuMail className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`} />
+                <LuMail
+                  className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`}
+                />
               }
               type="email"
               value={formData.email}
@@ -248,7 +254,9 @@ export default function ComponenteFormulario() {
               name="message"
               placeholder="Tu mensaje aquí..."
               startContent={
-                <LuMessageSquare className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`} />
+                <LuMessageSquare
+                  className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`}
+                />
               }
               value={formData.message}
               onChange={handleChange}
@@ -261,7 +269,7 @@ export default function ComponenteFormulario() {
           >
             <Button
               className="w-full"
-              color={theme === 'light' ? "primary" : "default"}
+              color={theme === "light" ? "primary" : "default"}
               isLoading={isSubmitting}
               size="lg"
               startContent={!isSubmitting && <LuSend className="w-4 h-4" />}
