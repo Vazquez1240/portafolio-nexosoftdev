@@ -30,10 +30,10 @@ export default function ComponenteServicios() {
             return (
               <ComponenteCardCustom
                 key={index}
-                icon={IconComponent} // Pasa el componente del ícono
-                titulo={servicio.title} // Pasa el título
-                description={servicio.description} // Pasa la descripción
-                index={String(index)} // Pasa el índice como string
+                description={servicio.description}
+                icon={IconComponent}
+                index={String(index)}
+                titulo={servicio.title}
               />
             );
           })}

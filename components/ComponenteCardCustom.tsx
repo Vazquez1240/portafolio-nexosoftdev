@@ -1,5 +1,7 @@
 import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
 import { ElementType } from "react";
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 interface Props {
   icon: ElementType,
@@ -8,7 +10,21 @@ interface Props {
   index: string
 }
 
-export default function ComponenteCardCustom({ icon: Icon, titulo, description, index }: Props) {
+export default function ComponenteCardCustom({
+  icon: Icon,
+  titulo,
+  description,
+  index,
+}: Props) {
+  const { theme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true)
+  }, []);
+
+  const isLight = mounted && (theme === "light" || resolvedTheme === "light");
+
   return (
     <Card
       key={index}
@@ -17,7 +33,7 @@ export default function ComponenteCardCustom({ icon: Icon, titulo, description, 
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <CardHeader className="flex justify-center flex-col items-center gap-5 p-6">
         <div className="p-2 rounded-lg">
-          <Icon className="h-8 w-8"/>
+          <Icon className={`h-8 w-8 ${isLight ? "text-primary" : "text-gray-300"}`}/>
         </div>
         <h4 className="font-semibold text-lg text-center transition-colors duration-300">
           {titulo}
