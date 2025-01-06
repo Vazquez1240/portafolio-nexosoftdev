@@ -51,7 +51,7 @@ export default function ComponenteNosotros() {
             <Button
               as={NextLink}
               className="mt-2"
-              color="primary"
+              color={colorIndicador}
               href="/nosotros"
             >
               Conoce más sobre nosotros
