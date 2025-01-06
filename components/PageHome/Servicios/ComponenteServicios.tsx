@@ -1,8 +1,7 @@
-import { Card, CardHeader, Divider, CardBody } from "@nextui-org/react";
-
 import { title } from "@/components/primitives";
 import { Servicios } from "@/utils/servicios";
 import { IconosServicios } from "@/utils/icons";
+import ComponenteCardCustom from "@/components/ComponenteCardCustom";
 
 export default function ComponenteServicios() {
   return (
@@ -29,26 +28,13 @@ export default function ComponenteServicios() {
               IconosServicios[servicio.icon as keyof typeof IconosServicios];
 
             return (
-              <Card
+              <ComponenteCardCustom
                 key={index}
-                className="group relative overflow-hidden border-none transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <CardHeader className="flex justify-center flex-col items-center gap-5 p-6">
-                  <div className="p-2 rounded-lg">
-                    {IconComponent && <IconComponent className="h-8 w-8" />}
-                  </div>
-                  <h4 className="font-semibold text-lg text-center transition-colors duration-300">
-                    {servicio.title}
-                  </h4>
-                </CardHeader>
-                <Divider />
-                <CardBody className="p-6">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {servicio.description}
-                  </p>
-                </CardBody>
-              </Card>
+                icon={IconComponent} // Pasa el componente del ícono
+                titulo={servicio.title} // Pasa el título
+                description={servicio.description} // Pasa la descripción
+                index={String(index)} // Pasa el índice como string
+              />
             );
           })}
         </div>
