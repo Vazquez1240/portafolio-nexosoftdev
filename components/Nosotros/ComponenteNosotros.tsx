@@ -1,10 +1,26 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Button } from "@nextui-org/button";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 import ComponenteAnimacion from "@/components/Animacion/ComponenteAnimacion";
 
 export default function ComponenteNosotros() {
+  const [mounted, setMounted] = useState(false);
+
+  const { theme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isLight = mounted && (theme === "light" || resolvedTheme === "light");
+
+  const colorIndicador = isLight ? "primary" : "default";
+
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -31,7 +47,12 @@ export default function ComponenteNosotros() {
               del mercado, ofreciendo siempre soluciones innovadoras y a la
               vanguardia.
             </p>
-            <Button as="a" className="mt-6" color="primary" href="/about">
+            <Button
+              as="a"
+              className="mt-6"
+              color={colorIndicador}
+              href="/nosotros"
+            >
               Conoce más sobre nosotros
             </Button>
           </motion.div>
