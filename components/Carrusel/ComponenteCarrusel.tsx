@@ -77,7 +77,7 @@ export function ComponenteCarrusel({
     return (
       <div className="relative w-[90%] mx-auto mb-32">
         <div className="animate-pulse">
-          <div className="h-64 bg-default-100/50 rounded-lg"></div>
+          <div className="h-64 bg-default-100/50 rounded-lg"/>
           <div className="flex justify-center mt-4 space-x-2">
             {items.map((_, index) => (
               <div
