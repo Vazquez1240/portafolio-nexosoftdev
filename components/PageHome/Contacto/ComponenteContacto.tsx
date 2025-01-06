@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { LuPhone, LuMail, LuPin } from "react-icons/lu";
 
 import ComponenteAnimacion from "@/components/Animacion/ComponenteAnimacion";
-import ComponenteFormulario from "@/components/Contacto/ComponenteFormulario";
+import ComponenteFormulario from "@/components/PageHome/Contacto/ComponenteFormulario";
 
 export default function ComponenteContacto() {
   const fadeInUp = {

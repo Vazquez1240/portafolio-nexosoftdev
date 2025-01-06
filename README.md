@@ -41,7 +41,7 @@ NexosoftDev es una plataforma web moderna desarrollada con Next.js y NextUI que 
 #### Componentes Principales
 - `Navbar.tsx` - Barra de navegación principal
 - `Footer.tsx` - Pie de página
-- `ComponenteHome.tsx` - Sección principal de la página de inicio
+- `ComponenteTitulo.tsx` - Sección principal de la página de inicio
 
 #### Secciones
 - `Servicios/ComponenteServicios.tsx` - Muestra los servicios ofrecidos

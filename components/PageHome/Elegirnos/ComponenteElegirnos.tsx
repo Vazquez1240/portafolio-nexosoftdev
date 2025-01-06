@@ -1,6 +1,6 @@
 import { title } from "@/components/primitives";
 import { ElegirnosData } from "@/utils/elegirnos";
-import { ComponenteCarrusel } from "@/components/Carrusel/ComponenteCarrusel";
+import { ComponenteCarrusel } from "@/components/PageHome/Carrusel/ComponenteCarrusel";
 
 export default function ComponenteElegirnos() {
   return (
