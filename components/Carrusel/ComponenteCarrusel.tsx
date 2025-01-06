@@ -21,14 +21,19 @@ export function ComponenteCarrusel({
   time = 3000,
 }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const theme = useTheme();
+  const { theme, resolvedTheme } = useTheme();
 
-  const colorIndicador =
-    theme.theme === "light"
-      ? ["bg-blue-500", "bg-blue-400"]
-      : ["bg-gray-200", "bg-gray-400"];
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isLight = mounted && (theme === "light" || resolvedTheme === "light");
+  const colorIndicador = isLight
+    ? ["bg-blue-500", "bg-blue-400"]
+    : ["bg-gray-200", "bg-gray-400"];
 
   const siguienteSlide = () => {
     resetInterval();
@@ -67,6 +72,24 @@ export function ComponenteCarrusel({
   }, [auto_display, time, items.length]);
 
   const currentItem = items[currentIndex];
+
+  if (!mounted) {
+    return (
+      <div className="relative w-[88%] mx-auto mb-32">
+        <div className="animate-pulse">
+          <div className="h-64 bg-default-100/50 rounded-lg"></div>
+          <div className="flex justify-center mt-4 space-x-2">
+            {items.map((_, index) => (
+              <div
+                key={index}
+                className="w-3 h-3 rounded-full bg-default-200/50"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-[88%] mx-auto mb-32">
@@ -132,7 +155,7 @@ export function ComponenteCarrusel({
             key={index}
             aria-current={currentIndex === index}
             aria-label={`Slide ${index + 1}`}
-            className={`w-3 h-3 rounded-full  ${
+            className={`w-3 h-3 rounded-full ${
               currentIndex === index ? colorIndicador[0] : colorIndicador[1]
             }`}
             type="button"

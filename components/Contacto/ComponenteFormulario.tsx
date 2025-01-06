@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Input, Textarea, Button, Card, CardBody } from "@nextui-org/react";
 import {
@@ -12,6 +12,7 @@ import {
   LuPhone,
 } from "react-icons/lu";
 import axios from "axios";
+import { useTheme } from "next-themes";
 
 interface FormData {
   name: string;
@@ -21,6 +22,16 @@ interface FormData {
 }
 
 export default function ComponenteFormulario() {
+  const [mounted, setMounted] = useState(false);
+  const { theme, resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isLight = mounted && (theme === "light" || resolvedTheme === "light");
+  const temaIconos = isLight ? ["text-primary"] : ["text-gray-300"];
+
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
@@ -75,7 +86,7 @@ export default function ComponenteFormulario() {
     }
     // @ts-ignore
     const response = await axios.post(
-      "https://nexosoftdev.com/api/sendEmail/",
+      "http://localhost:3000/api/sendEmail/",
       formData,
       {
         headers: {
@@ -90,6 +101,22 @@ export default function ComponenteFormulario() {
       setFormData({ name: "", phone: "", email: "", message: "" });
     }
   };
+
+  if (!mounted) {
+    return (
+      <Card className="bg-background/60 backdrop-blur-lg w-full">
+        <CardBody className="px-4 py-6 md:px-6">
+          <div className="animate-pulse space-y-6">
+            <div className="h-12 bg-default-100/50 rounded-lg"></div>
+            <div className="h-12 bg-default-100/50 rounded-lg"></div>
+            <div className="h-12 bg-default-100/50 rounded-lg"></div>
+            <div className="h-32 bg-default-100/50 rounded-lg"></div>
+            <div className="h-12 bg-default-100/50 rounded-lg"></div>
+          </div>
+        </CardBody>
+      </Card>
+    );
+  }
 
   if (isSubmitted) {
     return (
@@ -146,7 +173,7 @@ export default function ComponenteFormulario() {
               name="name"
               placeholder="Tu nombre"
               startContent={
-                <LuUser className="text-primary pointer-events-none flex-shrink-0" />
+                <LuUser className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`} />
               }
               value={formData.name}
               onChange={handleChange}
@@ -170,7 +197,7 @@ export default function ComponenteFormulario() {
               name="phone"
               placeholder="+52 123 456 7890"
               startContent={
-                <LuPhone className="text-primary pointer-events-none flex-shrink-0" />
+                <LuPhone className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`} />
               }
               type="tel"
               value={formData.phone}
@@ -195,7 +222,7 @@ export default function ComponenteFormulario() {
               name="email"
               placeholder="tu@email.com"
               startContent={
-                <LuMail className="text-primary pointer-events-none flex-shrink-0" />
+                <LuMail className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`} />
               }
               type="email"
               value={formData.email}
@@ -221,7 +248,7 @@ export default function ComponenteFormulario() {
               name="message"
               placeholder="Tu mensaje aquí..."
               startContent={
-                <LuMessageSquare className="text-primary pointer-events-none flex-shrink-0 mb-auto mt-1" />
+                <LuMessageSquare className={`pointer-events-none flex-shrink-0 ${temaIconos[0]}`} />
               }
               value={formData.message}
               onChange={handleChange}
@@ -234,7 +261,7 @@ export default function ComponenteFormulario() {
           >
             <Button
               className="w-full"
-              color="primary"
+              color={theme === 'light' ? "primary" : "default"}
               isLoading={isSubmitting}
               size="lg"
               startContent={!isSubmitting && <LuSend className="w-4 h-4" />}
