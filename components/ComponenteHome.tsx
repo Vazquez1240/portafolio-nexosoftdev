@@ -35,8 +35,8 @@ export default function ComponenteHome() {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[780px] px-4">
-      <div className="text-center justify-center gap-3 md:gap-6 flex flex-col w-[90%]">
+    <section className="relative flex flex-col items-center justify-center min-h-[780px] sm:min-h-[780px] md:min-h-[780px] lg:min-h-[780px] xl:min-h-[830px] px-4">
+      <div className="text-center mt-[-95px] justify-center gap-3 md:gap-6 flex flex-col w-[90%]">
         <h1
           className={title({ fullWidth: true, animation: "fade", size: "sm" })}
         >
