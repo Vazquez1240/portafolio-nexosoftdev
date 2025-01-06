@@ -5,6 +5,7 @@ import { Button } from "@nextui-org/button";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import NextLink from "next/link";
 
 import ComponenteAnimacion from "@/components/Animacion/ComponenteAnimacion";
 
@@ -48,9 +49,9 @@ export default function ComponenteNosotros() {
               vanguardia.
             </p>
             <Button
-              as="a"
-              className="mt-6"
-              color={colorIndicador}
+              as={NextLink}
+              className="mt-2"
+              color="primary"
               href="/nosotros"
             >
               Conoce más sobre nosotros
