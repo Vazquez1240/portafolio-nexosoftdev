@@ -9,7 +9,7 @@ export default function NuestraHistoria() {
   };
 
   return (
-    <div className=" w-[85%] px-4 md:px-6 mb-32">
+    <div className=" w-[93%] px-4 md:px-6 mb-32">
       <motion.div
         animate="animate"
         className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center"

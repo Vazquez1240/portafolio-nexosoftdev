@@ -5,7 +5,7 @@ import ConexionStatus from "@/components/ConexionStatus";
 import useConexionInternet from "@/components/ConexionInternet";
 import { useEffect } from "react";
 
-export default function DefaultLayout({ children }: { children: React.ReactNode }) {
+export default function DefaultLayout({ children }: { children: Rewact.ReactNode }) {
   const isOnline = useConexionInternet();
 
   // Para debugging

@@ -26,7 +26,7 @@ export default function ComponenteValores() {
 
   // @ts-ignore
   return (
-    <div className="w-[85%] mb-8 px-4 md:px-6">
+    <div className="w-[93%] mb-8 px-4 md:px-6">
       <motion.h2
         className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12"
         variants={fadeInUp}

@@ -5,14 +5,13 @@ export default function useConexionInternet() {
 
   const checkConnection = useCallback(() => {
     if (typeof window === 'undefined') return;
-    
+
     const online = navigator.onLine;
     console.log('Estado de conexión:', online ? '🟢 Conectado' : '🔴 Desconectado');
     setIsOnline(online);
   }, []);
 
   useEffect(() => {
-    // Verificación inicial
     checkConnection();
 
     const handleOnline = () => {

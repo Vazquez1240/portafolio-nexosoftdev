@@ -18,13 +18,13 @@ export default function ConexionStatus({ isOnline }: Props) {
     } else if (showOfflineAlert) {
       console.log('🟢 Mostrando alerta de reconexión');
       setIsExiting(true);
-      
+
       // Esperar a que termine la animación de salida
       setTimeout(() => {
         setShowOfflineAlert(false);
         setIsExiting(false);
         setShowOnlineAlert(true);
-        
+
         // Ocultar el mensaje de reconexión después de 3 segundos
         const timer = setTimeout(() => {
           setIsExiting(true);
@@ -41,7 +41,6 @@ export default function ConexionStatus({ isOnline }: Props) {
 
   return (
     <>
-      {/* Alerta de desconexión */}
       {showOfflineAlert && (
         <div className="fixed top-0 left-0 right-0 flex justify-center z-[9999] p-4 pointer-events-none">
           <div className={`bg-content1 border border-default-200 rounded-lg p-4 max-w-md w-full shadow-lg
@@ -61,14 +60,10 @@ export default function ConexionStatus({ isOnline }: Props) {
                 no estarán disponibles hasta que se restablezca la conexión.
               </p>
             </div>
-            <div className="flex justify-center mt-4">
-              <div className="animate-pulse w-2 h-2 rounded-full bg-default-400" />
-            </div>
           </div>
         </div>
       )}
 
-      {/* Alerta de reconexión */}
       {showOnlineAlert && (
         <div className="fixed top-0 left-0 right-0 flex justify-center z-[9999] p-4 pointer-events-none">
           <div className={`bg-content1 border border-success-200 rounded-lg p-4 max-w-md w-full shadow-lg

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function ComponenteTitulo() {
   return (
-    <div className="w-[82%] min-h-[350px] mt-24">
+    <div className="w-[90%] min-h-[350px] mt-24">
       <motion.div
         animate={{ opacity: 1, y: 0 }}
         className=" flex flex-col justify-center items-center gap-6"
