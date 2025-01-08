@@ -24,6 +24,7 @@ export default function ComponenteValores() {
 
   const isLight = mounted && (theme === "light" || resolvedTheme === "light");
 
+  // @ts-ignore
   return (
     <div className="w-[85%] mb-8 px-4 md:px-6">
       <motion.h2
@@ -46,10 +47,11 @@ export default function ComponenteValores() {
               icon={value.icon}
               description={value.description}
               titulo={value.title}
-              index={String(index)}/>
+              index={String(index)} />
           </motion.div>
         ))}
       </motion.div>
+
     </div>
   );
 }

@@ -1,18 +1,17 @@
 import { Link } from "@nextui-org/link";
-
 import { Head } from "./head";
-
 import { Navbar } from "@/components/navbar";
+import ConexionStatus from "@/components/ConexionStatus";
+import useConexionInternet from "@/components/ConexionInternet";
 
-export default function DefaultLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DefaultLayout({ children }: { children: React.ReactNode }) {
+  const isOnline = useConexionInternet();
+
   return (
     <div className="relative flex flex-col min-h-screen overflow-x-hidden">
       <Head />
       <Navbar />
+      <ConexionStatus isOnline={isOnline} />
       <main className="flex-grow w-full pt-16">
         {children}
       </main>
