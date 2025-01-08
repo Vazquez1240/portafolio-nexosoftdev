@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 
 interface Props {
-  icon: ElementType,
-  titulo: string,
-  description: string,
-  index: string
+  icon: ElementType;
+  titulo: string;
+  description: string;
+  index: string;
 }
 
 export default function ComponenteCardCustom({
@@ -16,11 +16,11 @@ export default function ComponenteCardCustom({
   description,
   index,
 }: Props) {
-  const { theme, resolvedTheme } = useTheme()
+  const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
+    setMounted(true);
   }, []);
 
   const isLight = mounted && (theme === "light" || resolvedTheme === "light");
@@ -33,7 +33,9 @@ export default function ComponenteCardCustom({
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <CardHeader className="flex justify-center flex-col items-center gap-5 p-6">
         <div className="p-2 rounded-lg">
-          <Icon className={`h-8 w-8 ${isLight ? "text-primary" : "text-gray-300"}`}/>
+          <Icon
+            className={`h-8 w-8 ${isLight ? "text-primary" : "text-gray-300"}`}
+          />
         </div>
         <h4 className="font-semibold text-lg text-center transition-colors duration-300">
           {titulo}
@@ -46,5 +48,5 @@ export default function ComponenteCardCustom({
         </p>
       </CardBody>
     </Card>
-  )
+  );
 }

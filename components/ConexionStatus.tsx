@@ -12,12 +12,10 @@ export default function ConexionStatus({ isOnline }: Props) {
 
   useEffect(() => {
     if (!isOnline) {
-      console.log("🔴 Mostrando alerta de desconexión");
       setIsExiting(false);
       setShowOfflineAlert(true);
       setShowOnlineAlert(false);
     } else if (showOfflineAlert) {
-      console.log("🟢 Mostrando alerta de reconexión");
       setIsExiting(true);
 
       // Esperar a que termine la animación de salida
