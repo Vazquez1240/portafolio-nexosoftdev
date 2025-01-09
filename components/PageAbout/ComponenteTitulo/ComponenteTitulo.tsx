@@ -9,10 +9,10 @@ export default function ComponenteTitulo() {
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.8 }}
       >
-        <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+        <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl md:text-5xl lg:text-6xl/none">
           Conoce Más Sobre Nosotros
         </h1>
-        <p className="mx-auto md:text-xl">
+        <p className="mx-auto text-xl text-justify">
           En NexosoftDev, combinamos pasión, experiencia y creatividad para
           construir soluciones innovadoras. Descubre nuestra historia, conoce al
           equipo detrás de cada proyecto y explora los valores que nos inspiran
