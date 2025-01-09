@@ -18,13 +18,13 @@
         }
 
         [data-theme="dark"] {
-            --background-color: #1f2937;
+            --background-color: #000000;
             --text-color: #e5e7eb;
             --heading-color: #f3f4f6;
             --subtext-color: #d1d5db;
-            --icon-background: #374151;
+            --icon-background: #38383F;
             --icon-color: #9ca3af;
-            --button-background: #3b82f6;
+            --button-background: #38383F;
             --button-hover: #60a5fa;
             --button-disabled: #60a5fa80;
         }
@@ -164,7 +164,7 @@
 
     // Function to get the current theme
     function getTheme() {
-        return localStorage.getItem('theme') || 'light';
+        return localStorage.getItem('theme') || 'dark';
     }
 
     // Set the initial theme
