@@ -12,24 +12,173 @@
             justify-content: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f5f5f5;
+            background-color: #ffffff;
+            color: #333;
         }
         .container {
             text-align: center;
             padding: 2rem;
+            max-width: 400px;
+        }
+        .icon-container {
+            display: inline-block;
+            background-color: #f3f4f6;
+            border-radius: 50%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .icon {
+            width: 48px;
+            height: 48px;
+            fill: none;
+            stroke: #9ca3af;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
         h1 {
-            color: #0072F5;
+            color: #1f2937;
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
         p {
-            color: #666;
+            color: #4b5563;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        button {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 9999px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2563eb;
+        }
+        button:disabled {
+            background-color: #93c5fd;
+            cursor: not-allowed;
+        }
+        .tips {
+            margin-top: 3rem;
+            text-align: left;
+        }
+        .tips h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .tips ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .tips li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .tips li svg {
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Sin conexión</h1>
-        <p>No hay conexión a internet. Por favor, verifica tu conexión e intenta nuevamente.</p>
+<div class="container">
+    <div class="icon-container fade-in-up" style="animation-delay: 0.2s;">
+        <svg class="icon" viewBox="0 0 24 24">
+            <path d="M1.41 1.13L22.87 22.59M16.72 11.06C17.54 11.89 18 13 18 14.18C18 15.8506 17.3679 17.4524 16.2426 18.5776C15.1174 19.7029 13.5156 20.335 11.845 20.335C10.1744 20.335 8.57262 19.7029 7.44741 18.5776C6.32221 17.4524 5.69009 15.8506 5.69009 14.18C5.69009 13.042 6.10009 11.962 6.83009 11.06M1 1L23 23"></path>
+        </svg>
     </div>
+    <h1 class="fade-in-up" style="animation-delay: 0.4s;">Sin conexión</h1>
+    <p class="fade-in-up" style="animation-delay: 0.6s;">Parece que has perdido la conexión a internet.</p>
+    <button id="reconnectBtn" class="fade-in-up" style="animation-delay: 0.8s;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;">
+            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+        </svg>
+        Intentar reconectar
+    </button>
+    <div id="tips" class="tips" style="display: none;">
+        <h2>Mientras tanto, puedes intentar:</h2>
+        <ul>
+            <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+                Verificar tu conexión WiFi
+            </li>
+            <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+                Comprobar tus datos móviles
+            </li>
+            <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+                Reiniciar tu router
+            </li>
+            <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+                Contactar a tu proveedor de internet
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    const reconnectBtn = document.getElementById('reconnectBtn');
+    const tips = document.getElementById('tips');
+
+    reconnectBtn.addEventListener('click', function() {
+        this.disabled = true;
+        this.innerHTML = `
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem; animation: spin 1s linear infinite;">
+                    <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                </svg>
+                Reconectando...
+            `;
+        setTimeout(() => {
+            window.location.reload();
+        }, 3000);
+    });
+
+    setTimeout(() => {
+        tips.style.display = 'block';
+        const listItems = tips.querySelectorAll('li');
+        listItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateX(0)';
+            }, index * 100);
+        });
+    }, 5000);
+</script>
 </body>
-</html> 
+</html>

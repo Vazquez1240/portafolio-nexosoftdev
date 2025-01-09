@@ -16,10 +16,4 @@ export const valores = [
     description: "Nos esforzamos por superar las expectativas en cada proyecto",
     icon: LuTarget,
   },
-  {
-    title: "Integridad",
-    description:
-      "Actuamos con honestidad y transparencia en todo lo que hacemos",
-    icon: LuAward,
-  },
 ];
