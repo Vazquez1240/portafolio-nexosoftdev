@@ -5,8 +5,7 @@ import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
 import { valores } from "@/utils/valores";
-
-import ComponenteCardCustom from "@/components/ComponenteCardCustom";
+import ComponenteCardCustom from "@/components/Genericos/ComponenteCardCustom";
 
 export default function ComponenteValores() {
   const fadeInUp = {
@@ -26,7 +25,7 @@ export default function ComponenteValores() {
 
   // @ts-ignore
   return (
-    <div className="w-[93%] mb-8 px-4 md:px-6">
+    <div className="w-[93%] h-full mb-8 px-4 md:px-6">
       <motion.h2
         className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-12"
         variants={fadeInUp}
@@ -35,7 +34,7 @@ export default function ComponenteValores() {
       </motion.h2>
       <motion.div
         animate="animate"
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+        className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
         initial="initial"
         variants={{
           animate: { transition: { staggerChildren: 0.1 } },
@@ -44,14 +43,14 @@ export default function ComponenteValores() {
         {valores.map((value, index) => (
           <motion.div key={value.title} variants={fadeInUp}>
             <ComponenteCardCustom
-              icon={value.icon}
               description={value.description}
+              icon={value.icon}
+              index={String(index)}
               titulo={value.title}
-              index={String(index)} />
+            />
           </motion.div>
         ))}
       </motion.div>
-
     </div>
   );
 }

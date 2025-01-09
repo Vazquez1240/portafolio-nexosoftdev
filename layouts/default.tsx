@@ -3,8 +3,8 @@ import { Link } from "@nextui-org/link";
 import { Head } from "./head";
 
 import { Navbar } from "@/components/navbar";
-import ConexionStatus from "@/components/ConexionStatus";
-import useConexionInternet from "@/components/ConexionInternet";
+import ConexionStatus from "@/components/Conexion/ConexionStatus";
+import useConexionInternet from "@/components/Conexion/ConexionInternet";
 
 export default function DefaultLayout({
   children,

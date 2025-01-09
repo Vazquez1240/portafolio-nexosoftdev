@@ -16,6 +16,7 @@ export const Head = () => {
         name="viewport"
       />
       <link href="/instagram-publicacion.ico" rel="icon" />
+      <link rel="manifest" href="/manifest.json" />
     </NextHead>
   );
 };

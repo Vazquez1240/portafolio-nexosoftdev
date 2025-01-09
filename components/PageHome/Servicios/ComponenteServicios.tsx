@@ -1,7 +1,7 @@
 import { title } from "@/components/primitives";
 import { Servicios } from "@/utils/servicios";
 import { IconosServicios } from "@/utils/icons";
-import ComponenteCardCustom from "@/components/ComponenteCardCustom";
+import ComponenteCardCustom from "@/components/Genericos/ComponenteCardCustom";
 
 export default function ComponenteServicios() {
   return (
