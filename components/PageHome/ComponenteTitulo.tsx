@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import { FaAngleDown } from "react-icons/fa";
 import { useEffect, useState } from "react";
 

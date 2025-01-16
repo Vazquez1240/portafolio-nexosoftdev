@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Input, Textarea, Button, Card, CardBody } from "@nextui-org/react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Input, Textarea, Button, Card, CardBody } from "@heroui/react";
 import {
   LuSend,
   LuUser,
@@ -13,6 +13,9 @@ import {
 } from "react-icons/lu";
 import axios from "axios";
 import { useTheme } from "next-themes";
+import { Alert } from "@heroui/alert";
+
+import useConexionInternet from "@/components/Conexion/ConexionInternet";
 
 interface FormData {
   name: string;
@@ -24,6 +27,8 @@ interface FormData {
 export default function ComponenteFormulario() {
   const [mounted, setMounted] = useState(false);
   const { theme, resolvedTheme } = useTheme();
+  const [componteOnline, setComponenteOnline] = useState(false);
+  const isOnline = useConexionInternet();
 
   useEffect(() => {
     setMounted(true);
@@ -77,6 +82,14 @@ export default function ComponenteFormulario() {
 
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    if (!isOnline) {
+      setComponenteOnline(true);
+      setTimeout(() => {
+        setComponenteOnline(false);
+      }, 1500);
+
+      return;
+    }
     setIsSubmitting(true);
     await new Promise((resolve) => setTimeout(resolve, 800));
     if (!validateForm()) {
@@ -149,6 +162,28 @@ export default function ComponenteFormulario() {
   return (
     <Card className="bg-background/60 backdrop-blur-lg w-full">
       <CardBody className="px-4 py-6 md:px-6">
+        <AnimatePresence>
+          {componteOnline && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Alert
+                variant="flat"
+                color="warning"
+              >
+                <div className="flex flex-col gap-1">
+                  <span className="text-medium font-medium">Upsss... Ha ocurrido un error</span>
+                  <span className="text-small font-normal">
+                      Esta acción esta limitada sin conexion, intenta cuando vuelvas a tener internet!
+                    </span>
+                </div>
+              </Alert>
+            </motion.div>
+          )}
+        </AnimatePresence>
         <motion.form
           animate={{ opacity: 1, y: 0 }}
           className="space-y-6 w-full"

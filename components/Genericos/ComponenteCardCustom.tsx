@@ -1,4 +1,4 @@
-import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
+import { Card, CardBody, CardHeader, Divider } from "@heroui/react";
 import { ElementType } from "react";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";

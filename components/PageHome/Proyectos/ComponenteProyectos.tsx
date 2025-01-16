@@ -6,9 +6,9 @@ import {
   CardBody,
   CardFooter,
   Divider,
-} from "@nextui-org/react";
-import { Image } from "@nextui-org/image";
-import { Chip } from "@nextui-org/react";
+} from "@heroui/react";
+import { Image } from "@heroui/image";
+import { Chip } from "@heroui/react";
 import React from "react";
 
 import { projects } from "@/utils/proyectos";

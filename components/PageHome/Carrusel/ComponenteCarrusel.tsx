@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Card, CardBody, Button } from "@nextui-org/react";
+import { Card, CardBody, Button } from "@heroui/react";
 import Image from "next/image";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { useTheme } from "next-themes";
